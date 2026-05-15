@@ -1,17 +1,25 @@
-:root {
-  --text: #000000;
-  --text-h: #DF007F;
-  --bg: #fff;
-  --border: rgb(23, 26, 31);
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+/* BEM:
+.bloque
+.bloque__elemento
+.bloque__elemento--modificador
+ */
+
+@font-face {
+  font-family: "Sourse Sans";
+  src: url(./fonts/SourceSans3-Regular.woff);
 }
 
-body {
-  margin: 0;
+:root {
+  --color-primary: #DF007F;
+  --color-secondary: #873AAA;
+  --color-white: #FFFFFF;
+  --color-black: #000000;
 }
+
+* {
+  margin: 0;
+  font-family: "Sourse Sans"
+}
+
+
+
