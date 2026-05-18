@@ -1,35 +1,34 @@
 <!doctype html>
-<html lang="en">
+<html lang="ca">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>first-itacademy-project-berta</title>
-    
+    <title>Alumni Project</title>
     <link rel="stylesheet" href="src/style.css">
-
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <nav class="nav">
+        <div class="nav__logo-box">
+          <img src="/src/assets/img/Header.svg" alt="Logo Alumni" class="nav__logo-img">
+          <p class="nav__text">Connectant i empoderant a la nostra comunitat global d'alumnes</p>
+        </div>
 
-    <nav>
-      <div class="nav__logo">
-        <img src="/src/assets/Logo.png" alt="">
-      </div>
-      <div class="nav__links">
-        <ul>
-          <il>Home</il>
-          <il>Networking</il>
-          <il>Job Opportunities</il>
-        </ul>
-      </div>
-      <div class="nav__btn">
-        <p class="nav__btn--white">Apunta't</p>
-        <p class="nav__btn--color">Com et veuen?</p>
-      </div>
+        <div class="nav__pages">
+          <ul>
+            <li>Inici</li>
+            <li>Xarxa</li>
+            <li>Oportunitats de Feina</li>
+          </ul>
+        </div>
+
+        <div class="nav__buttons">
+          <button class="btn btn--large">Uneix-te</button>
+          <button class="btn btn--white"><img src="/src/assets/icons/card.png" alt="Icono carta">Apunta't</button>
+          <button class="btn btn--color"><img src="/src/assets/icons/user.png" alt="Icono usuario">Com et veuen?</button>
+        </div>
         
-     
-    </nav>
-
+      </nav>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
