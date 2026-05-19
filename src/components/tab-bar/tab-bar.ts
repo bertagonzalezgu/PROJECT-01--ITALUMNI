@@ -1,4 +1,4 @@
-import "./tab-bar.css";
+import "../tab-bar/tab-bar.css";
 
 export function tabBar(): string {
 
