@@ -4,7 +4,9 @@
     height: 300px;
     background-color: rgb(29, 33, 40);
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     position: fixed;
     bottom: 0;
     color: #ffffff;
@@ -26,7 +28,7 @@
     background-color: #1e2229;
     border: 1px solid #4f5660;
     border-radius: 50px;
-    width: 100%;
+    width: 70%;
     overflow: hidden;
 }
 
@@ -53,7 +55,7 @@
 }
 
 
-.footer__btn-submit {
+.footer__btn-submit{
     background: linear-gradient(90deg, #8a41b4, #d80073);
     color: #ffffff;
     border: none;
@@ -63,5 +65,26 @@
     font-weight: 200;
     cursor: pointer;
     white-space: nowrap;
+}
+
+.footer__nav-box{
+    width: 100%;
+    padding: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer__logo{
+    display: flex;
+    align-items: center;
+}
+
+.footer__links ul{
+    list-style: none;
+    display: flex;
+    gap: 20px;
 }
 
