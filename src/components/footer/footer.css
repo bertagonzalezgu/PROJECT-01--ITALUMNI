@@ -1,3 +1,13 @@
+@font-face {
+  font-family: "Source Sans";
+  src: url(./fonts/SourceSans3-Regular.woff);
+}
+
+.footer{
+    display: none;
+}
+
+@media (min-width: 768px){
 
 .footer{
     width: 100%;
@@ -11,7 +21,8 @@
     bottom: 0;
     color: #ffffff;
     gap: 20px;
-    padding: 50px;
+    padding: 1% 10% 1% 10%;
+    font-family: "Source Sans";
 }
 
 .footer__form-box{
@@ -20,6 +31,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    justify-content: center;
     gap: 20px;
     padding: 50px;
 }
@@ -92,6 +104,7 @@
 .footer__divider{
     width: 100%;
     border-top: 1px solid #DEE1E6;
+    opacity: 0.5;
 }
 
 .footer__bottom{
@@ -113,14 +126,22 @@
 
 .footer__select-language select{
     background-color: transparent;
-    color: white;
+    color: rgb(255, 255, 255);
     border: none;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.footer__select-language select option{
+    background-color: white;
+    color: rgb(0, 0, 0);
 }
 
 .footer__copyright{
-    width: 200px;
+    width: 250px;
     text-align: center;
     font-size: 0.8rem;
+    font-weight: 100;
 }
 
 .footer__social-icons{
@@ -131,4 +152,6 @@
 .footer__social-icons img{
     width: 20px;
     height: 20px;
+}
+
 }
