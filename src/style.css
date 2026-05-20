@@ -1,7 +1,21 @@
-/* Fonts i Variables */
 @font-face {
   font-family: "Source Sans";
   src: url(./fonts/SourceSans3-Regular.woff);
+}
+
+@font-face {
+  font-family: "Source Sans Light";
+  src: url(./fonts/SourceSans3-Light.woff);
+}
+
+@font-face {
+  font-family: "Source Sans Medium";
+  src: url(./fonts/SourceSans3-Medium.woff);
+}
+
+@font-face {
+  font-family: "Source Sans Bold";
+  src: url(./fonts/SourceSans3-Bold.woff);
 }
 
 :root {
