@@ -3,11 +3,10 @@ export function navBar(): string {
 
     return `
     <nav class="nav">
-        <div class="nav__logo-box">
-          <img src="/src/assets/img/Header.svg" alt="Logo Alumni" class="nav__logo-img">
+        <div class="nav__box">
+          <img src="/src/assets/img/Header.svg" alt="Logo Alumni" class="nav__box-img">
           <p class="nav__text">Connectant i empoderant a la nostra comunitat global d'alumnes</p>
-        </div>
-
+        
         <div class="nav__pages">
           <ul>
             <li>Inici</li>
@@ -15,7 +14,7 @@ export function navBar(): string {
             <li>Oportunitats de Feina</li>
           </ul>
         </div>
-
+        </div>
         <div class="nav__buttons">
           <button class="btn btn--large">Uneix-te</button>
           <button class="btn btn--white"><img src="/src/assets/icons/card.png" alt="Icono carta">Apunta't</button>
