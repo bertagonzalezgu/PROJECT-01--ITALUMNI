@@ -85,8 +85,8 @@ body {
   align-items: center;
   gap: 8px;
   border-radius: 5px;
-  font-weight: bold;
   font-size: 1rem;
+  white-space: nowrap;
 }
 
 .btn--large{
@@ -102,8 +102,6 @@ body {
 .btn--white {
   display: none;
 }
-
-
 
 
 @media (min-width: 768px){
@@ -171,7 +169,7 @@ body {
 }
 
 .btn {
-  padding: 10px 100px;
+  padding: 10px 20px;
   display: flex;
   justify-content: center;
   align-items: center;
