@@ -1,0 +1,223 @@
+.nav{
+    display: none;
+}
+
+.topbar{
+    padding: 8px 20px 0;
+    background: #fff;
+}
+ 
+.topbar__row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 44px;
+}
+ 
+.topbar__back{
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    visibility: hidden;  
+    pointer-events: none;
+}
+
+.topbar--has-back .topbar__back{
+    visibility: visible;
+    pointer-events: auto;
+}
+ 
+.topbar__title{
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--color-black);
+    align-items: center;
+    text-align: center;
+}
+ 
+.topbar__actions{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+    
+.topbar__icon{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+    
+.topbar__icon--filter{ 
+    font-size: 18px; 
+    color: #555; 
+}
+
+.topbar__icon--avatar{
+    background: #ddd;
+    overflow: hidden;
+    font-size: 14px;
+    font-weight: 600;
+    color: #888;
+}
+ 
+.topbar__search{
+    display: flex;     
+    margin: 10px 0 8px;
+    background: #f2f2f2;
+    border-radius: 12px;
+    padding: 9px 14px;
+    gap: 8px;
+    align-items: center;
+}
+
+.topbar--has-search .topbar__search{ 
+    display: flex;
+}
+ 
+.topbar__search input{
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    color: #333;
+    outline: none;
+    flex: 1;
+}
+
+.topbar__search input::placeholder{ 
+    color: #aaa;
+}
+    
+.topbar__search-icon{ 
+    font-size: 16px; 
+    color: #aaa; 
+}
+ 
+/* Filtros (solo Job Portal) */
+.topbar__filters{
+    display: none;              /* oculta por defecto */
+    gap: 10px;
+    padding-bottom: 10px;
+}
+
+.topbar--has-filters .topbar__filters{ 
+    display: flex; 
+}
+ 
+.topbar__filter-btn{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    font-size: 13px;
+    color: #444;
+    cursor: pointer;
+    padding: 4px 0;
+}
+
+.topbar__filter-btn svg{ 
+    opacity: 0.5; 
+}
+
+@media (min-width: 768px){
+
+.topbar{
+    display: none;
+}
+
+.nav{
+    margin-top: 0px;
+    width: 100%;
+    min-height: 70px;
+    padding: 0px 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+}
+
+.nav__box{
+  width: auto;
+  height: 100%;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+}
+
+.nav__box-logo{
+    display: flex;
+    gap: 10px;
+}
+
+.nav__box img{
+    width: 33px;
+    height: auto;
+}
+
+.nav__brand-name{
+    font-size: 28px;
+}
+
+.nav__pages{
+    height: 100%;
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 1rem;
+}
+
+.nav__pages ul{
+    height: 100%;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.nav__pages ul li{
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-bottom: 5px solid transparent;
+    color: #565E6C;
+    text-decoration: none;
+}
+
+a, a:visited{
+    text-decoration: none;
+}
+
+.nav__pages ul li:hover{
+    color: var(--color-primary);
+    font-weight: bold;
+    border-bottom: 5px solid var(--color-primary);
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.nav__actions{
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+
+}
