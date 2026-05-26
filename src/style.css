@@ -24,7 +24,7 @@ body {
   color: var(--color-black);
 }
 
-.nav {
+.nav{
   padding: 40px 20px;
   display: flex;
   flex-direction: column;
@@ -33,7 +33,9 @@ body {
   min-height: 100vh;
 }
 
-.nav__logo-box{
+.nav__box{
+  width: 310px;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -42,7 +44,7 @@ body {
   gap: 20px;
 }
 
-.nav__logo-img {
+.nav__box-img {
   width: 100%;
   height: auto;
 }
@@ -89,81 +91,97 @@ body {
 }
 
 
-
-
 @media (min-width: 768px){
 
 
 .nav{
   margin-top: 20px;
   width: 100%;
-  min-height: 20px;
+  min-height: 70px;
+  padding: 0px 30px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 10px;
+  align-items: center;
   border-bottom: 1px solid #ddd;
   border-top: 1px solid #ddd;
 }
 
-.nav__logo-box{
+.nav__box{
   width: auto;
+  height: 100%;
   flex-direction: row;
-  justify-content: left;
+  justify-content: flex-start;
   align-items: center;
-  padding-left: 30px;
+  text-align: center;
+  gap: 10%;
 }
 
 .nav__text{
   display: none;
 }
 
-.nav__logo-img{
-  width: 100px;
+.nav__box-img{
+  width: 150px;
   height: auto;
 }
 
 .nav__pages{
-  display: block;
-  flex-grow: 1;
+  height: 100%;
+  padding-top: 10px;
+  display: flex;
   justify-content: center;
-  font-size: 0.9rem;
+  align-items: center;
+  height: 100%;
+  font-size: 1rem;
 }
 
 .nav__pages ul{
+  height: 100%;
   list-style: none;
   display: flex;
   align-items: center;
+  flex-direction: row;
   gap: 30px;
   
 }
 
 .nav__pages ul li{
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
-  padding: 10px;
+  border-bottom: 5px solid transparent;
+  color: #565E6C;
+
 }
 
 .nav__pages ul li:hover{
   color: var(--color-primary);
   font-weight: bold;
-  border-bottom: 3px solid var(--color-primary);
+  border-bottom: 5px solid var(--color-primary);
+  border-radius: 5px;
 }
 
 .nav__buttons{
-  width: auto;
   display: flex;
+  justify-content: flex-end;
   gap: 20px;
 }
 
 .btn{
+  width: 160px;
+  height: 37px;
   padding: 10px 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 8px;
-  border-radius: 25px;
-  font-weight: bold;
+  border-radius: 10px;
   font-size: 0.9rem;
+  cursor: pointer;
+  font-weight: 400;
 }
 
 .btn--large{

@@ -6,9 +6,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 
 ${navBar()}
 ${statusBar()}
-
-
-
-
-
-`
+  
+  <main id="main-content">
+    </main>
+`;
