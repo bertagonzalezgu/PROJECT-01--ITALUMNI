@@ -1,7 +1,7 @@
 
 import "/Especialització_ItAcademy/PROJECTE 1 ITAlumni/first-itacademy-project-berta/src/pages/home/home.css";
 
-export function pagesHome(): string {
+export function pagesHomeDesktop(): string {
 
     return `
     <main class="home-content">
@@ -102,5 +102,12 @@ export function pagesHome(): string {
 
         </section>
       </main>
+    `;
+}
+
+export function pagesHomeMobile(): string {
+
+    return `
+    
     `;
 }

@@ -1,11 +1,13 @@
-import { pagesHome } from './pages/home/home'
 import './style.css'
+import { pagesHomeDesktop, pagesHomeMobile } from './pages/home/home'
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-
-${pagesHome()}
   
-  <main id="main-content">
+<main id="main-content">
+
+${pagesHomeDesktop()}
+${pagesHomeMobile()}
+  
     </main>
 
 `;
