@@ -4,6 +4,7 @@ import { statusBar } from './components/status-bar/status-bar'
 import { footer } from './components/footer/footer';
 import { tabBar } from './components/tab-bar/tab-bar';
 import { topBarMobile, topBarDesktop } from './components/top-bar/top-bar';
+import { signUp } from './components/sign-up/sign-up';
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 
@@ -21,6 +22,8 @@ ${topBarMobile({
 ${topBarDesktop({
   activePage: 'home'
 })}
+
+${signUp()}
 
 ${footer()}
 ${tabBar()}
