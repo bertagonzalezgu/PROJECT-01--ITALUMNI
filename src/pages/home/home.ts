@@ -108,6 +108,26 @@ export function pagesHomeDesktop(): string {
 export function pagesHomeMobile(): string {
 
     return `
-    
+    <main class="home-content-mobile">
+
+        <section class="home-grid">
+
+          <div class="home-grid-card">
+            <img src="src/assets/img/home-mobile/m-accelerator-yTsy3PYFPtc-unsplash.jpg" alt="cork with thumbtacks">
+            <h3 class="home-grid-card__title">Xarxa</h3>
+            <p class="home-grid-card__subtitle">Connecta amb professionals del sector.</p>
+            <button class="home-grid-card__btn">Explora</button>
+          </div>
+
+          <div class="home-grid-card">
+            <img src="src/assets/img/home-mobile/vitaly-gariev-2AOIg7Qvu8w-unsplash.jpg" alt="job interview">
+            <h3 class="home-grid-card__title">Oportunitats de feina</h3>
+            <p class="home-grid-card__subtitle">Descobreix ofertes de treball adaptades a les teves habilitats.</p>
+            <button class="home-grid-card__btn">Busca feina</button>
+          </div>
+
+
+        </section>
+      </main>
     `;
 }
