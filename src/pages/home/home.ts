@@ -4,7 +4,7 @@ import "/Especialització_ItAcademy/PROJECTE 1 ITAlumni/first-itacademy-project-
 export function pagesHomeDesktop(): string {
 
     return `
-    <main class="home-content">
+    <div class="home-content">
 
         <section class="home-hero">
 
@@ -101,14 +101,14 @@ export function pagesHomeDesktop(): string {
           
 
         </section>
-      </main>
+      </div>
     `;
 }
 
 export function pagesHomeMobile(): string {
 
     return `
-    <main class="home-content-mobile">
+    <div class="home-content-mobile">
 
         <section class="home-grid">
 
@@ -128,6 +128,6 @@ export function pagesHomeMobile(): string {
 
 
         </section>
-      </main>
+      </div>
     `;
 }
