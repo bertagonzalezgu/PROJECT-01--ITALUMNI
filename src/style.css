@@ -23,7 +23,9 @@
   --color-secondary: #873AAA;
   --color-white: #FFFFFF;
   --color-black: #000000;
-  --color-gray-light: #f4f4f4;
+  --color-gray-light: #F3F4F6;
+  --color-gray-light-1: #BCC1CA;
+  --color-gray: #9095A0;
   --gradient: linear-gradient(to right, var(--color-secondary), var(--color-primary));
 }
 
