@@ -1,5 +1,6 @@
 import './style.css'
 import { pagesHomeDesktop, pagesHomeMobile } from './pages/home/home'
+import { pagesNetworking } from './pages/networking/networking';
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   
@@ -7,6 +8,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 
 ${pagesHomeDesktop()}
 ${pagesHomeMobile()}
+${pagesNetworking()}
   
     </main>
 
