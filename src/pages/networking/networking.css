@@ -11,10 +11,11 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 20px;
 }
 
-.card{
+.card, .card-mobile-only{
   display: flex;
   width: 100%;
   height: auto;
@@ -32,10 +33,12 @@
   flex-direction: column;
   justify-content: space-between;
   gap: 5px;
+  padding-bottom: 10px;
 }
 
 .card-body h3{
   font-size: 14px;
+  font-weight: 400;
 }
 
 .card-body p{
@@ -141,11 +144,17 @@
   gap: 10px;
 }
 
+.card-mobile-only{
+  display: none;
+}
+
 .card{
   flex-direction: column;
-  align-items: center;
+  align-items: start;
   margin: 10px 0px;
   gap: 15px;
+  border: transparent;
+  padding: 0px;
 }
 
 .card-body{
@@ -156,10 +165,55 @@
   font-family: "Source Sans Light";
   font-size: 12px;
   font-weight: 100;
+  border-radius: 10px;
 }
 
 .panels-layout{
-  display: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: "Source Sans Light";
+}
+
+.panel-activity h2{
+  font-size: 16px;
+  margin: 5px 0px;
+  font-weight: 400;
+}
+
+.activity-list{
+  line-height: 1.5;
+}
+
+.activity-list li{
+  list-style: none;
+  font-family: "Source Sans Light";
+  font-weight: 100;
+  font-size: 14px;
+  color: var(--color-gray);
+}
+
+.panel-suggestions h2{
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.suggestions-list{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-weight: 100;
+}
+
+.btn-secondary{
+  font-size: 12px;
+  font-weight: 100;
+  font-family: "Source Sans Light";
+  color: var(--color-white);
+  border: transparent;
+  background: var(--color-primary);
+  border-radius: 10px;
 }
 
 }
