@@ -8,6 +8,16 @@
   src: url(./fonts/SourceSans3-Light.woff);
 }
 
+@font-face {
+  font-family: "Source Sans Medium";
+  src: url(./fonts/SourceSans3-Medium.woff);
+}
+
+@font-face {
+  font-family: "Source Sans Bold";
+  src: url(./fonts/SourceSans3-Bold.woff);
+}
+
 :root {
   --color-primary: #DF007F;
   --color-secondary: #873AAA;
@@ -15,6 +25,7 @@
   --color-black: #000000;
   --color-gray-light: #F3F4F6;
   --color-gray-light-1: #BCC1CA;
+  --color-gray: #565E6C;
   --gradient: linear-gradient(to right, var(--color-secondary), var(--color-primary));
 }
 
@@ -78,8 +89,8 @@ body {
   align-items: center;
   gap: 8px;
   border-radius: 5px;
-  font-weight: bold;
   font-size: 1rem;
+  white-space: nowrap;
 }
 
 .btn--large{
@@ -177,17 +188,15 @@ body {
   gap: 20px;
 }
 
-.btn{
-  width: 160px;
-  height: 37px;
+.btn {
   padding: 10px 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 10px;
-  font-size: 0.9rem;
-  cursor: pointer;
-  font-weight: 400;
+  gap: 8px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1rem;
 }
 
 .btn--large{
