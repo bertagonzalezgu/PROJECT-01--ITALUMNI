@@ -103,6 +103,9 @@ body {
   border-bottom: 1px solid #ddd;
   border-top: 1px solid #ddd;
   position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
   background: var(--color-white);
 }
 
@@ -113,10 +116,10 @@ body {
   justify-content: flex-start;
   align-items: center;
   text-align: center;
-  gap: 10%;
+  gap: 30px;
 }
 
-.nav__box-img{
+.nav .nav__box img{
   width: 150px;
   height: auto;
 }

@@ -3,13 +3,14 @@
   src: url(./fonts/SourceSans3-Regular.woff);
 }
 
-.footer{
+#footer{
     display: none;
 }
 
 @media (min-width: 768px){
 
-.footer{
+#footer{
+    display: block;
     width: 100%;
     height: auto;
     background-color: rgb(29, 33, 40);

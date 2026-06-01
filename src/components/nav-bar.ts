@@ -4,7 +4,7 @@ export function navBar(): string {
     return /* html*/ `
     <nav class="nav">
         <div class="nav__box">
-          <img src="/src/assets/img/Header.svg" alt="Logo Alumni" class="nav__box-img">
+          <img src="/src/assets/img/Header.svg" alt="Logo Alumni">
         
         <div class="nav__pages">
           <ul>

@@ -1,14 +1,16 @@
-import "/Especialització_ItAcademy/PROJECTE 1 ITAlumni/first-itacademy-project-berta/src/components/sign-up/sign-up.css"
-
+import '../sign-up/sign-up.css'
 export function signUp(): string {
 
     return /* html*/ `
+
+    <div class="sign-up-bg">
+
     <div class="card">
  
     <h1 class="card__title">Crea un compte</h1>
     <p class="card__subtitle">Uneix-te a nosaltres per connectar-te i compartir oportunitats!</p>
 
-    <form>
+    <form class="form">
 
       <label>
         <div class="field">
@@ -71,6 +73,7 @@ export function signUp(): string {
     <p class="footer">Ja t'has registrat? <a href="#">Inicia sessió</a></p>
  
   </div>
-</div>
-    `;
+  </div>
+
+  `;
 }

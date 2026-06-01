@@ -3,7 +3,7 @@ import "../footer/footer.css";
 export function footer(): string {
 
     return /* html*/ `
-    <footer class="footer">
+    <footer class="footer" id="footer">
         <div class="footer__form-box">
           <h3>"No et perdis res, subscriu-te!"</h3>       
         <form class="footer__form">
