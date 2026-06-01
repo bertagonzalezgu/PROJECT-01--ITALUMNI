@@ -62,6 +62,7 @@
 }
 
 .home-content{
+    display: block;
     width: 100%;
     padding: 60px 20px;
     font-family: "Source Sans Light";

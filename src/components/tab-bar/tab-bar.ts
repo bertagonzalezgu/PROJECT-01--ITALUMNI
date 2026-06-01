@@ -2,7 +2,7 @@ import "../tab-bar/tab-bar.css";
 
 export function tabBar(): string {
 
-    return `
+    return /* html*/ `
     <nav class="tab-bar">
       <div class="tab-bar__item">
         <img class="tab-bar__icon tab-bar__icon-default" src="src/assets/icons/tab-bar-default/Home.svg" alt="Home default icon"> <img class="tab-bar__icon tab-bar__icon-active" src="src/assets/icons/tab-bar-active/Home.svg" alt="Home active icon">

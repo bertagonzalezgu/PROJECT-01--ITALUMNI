@@ -13,7 +13,7 @@ interface TopBarPropsDesktop{
 
 export function topBarMobile(props: TopBarPropsMobile): string{
 
-    return `
+    return /* html*/ `
     
     <div class="topbar 
         ${props.showBack ? '.topbar--has-back' : ''}
@@ -55,7 +55,7 @@ export function topBarMobile(props: TopBarPropsMobile): string{
 
 export function topBarDesktop(props: TopBarPropsDesktop): string{
 
-    return `
+    return /* html*/ `
     
     <nav class="nav">
 

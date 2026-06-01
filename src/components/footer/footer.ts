@@ -2,7 +2,7 @@ import "../footer/footer.css";
 
 export function footer(): string {
 
-    return `
+    return /* html*/ `
     <footer class="footer">
         <div class="footer__form-box">
           <h3>"No et perdis res, subscriu-te!"</h3>       

@@ -2,7 +2,7 @@ import "../networking/networking.css";
 
 export function pagesNetworking(): string {
 
-    return `
+    return /* html*/ `
     <div class="container">
   
       <section class="top-bar-section-desktop">

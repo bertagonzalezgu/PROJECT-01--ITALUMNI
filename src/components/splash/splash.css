@@ -1,0 +1,49 @@
+.splash{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 40px 20px;
+}
+
+.content-box{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+    gap: 25px;
+}
+
+.splash img{
+    width: 100%;
+    height: auto;
+}
+
+.splash p{
+    width: 250px;
+    padding: 20px 5px;
+    display: flex;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.btn--large{
+    width: 324px;
+    height: 52px;
+    background: var(--gradient);
+    color: var(--color-white);
+    border: none;
+    margin-top: auto;
+}
+
+@media (min-width: 768px){
+
+.splash{
+    display: none;
+}
+
+}

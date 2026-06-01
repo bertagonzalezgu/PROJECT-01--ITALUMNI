@@ -2,7 +2,7 @@ import "/Especialització_ItAcademy/PROJECTE 1 ITAlumni/first-itacademy-project-
 
 export function signUp(): string {
 
-    return `
+    return /* html*/ `
     <div class="card">
  
     <h1 class="card__title">Crea un compte</h1>

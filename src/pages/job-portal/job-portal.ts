@@ -78,7 +78,7 @@ export function pagesJobsDesktop(): string {
 
 export function pagesJobsMobile(): string {
 
-    return `
+    return /* html*/ `
     <div class="container">
         
           <h1 class="cards-grid__title">Ofertes de feina</h1>
