@@ -1,4 +1,4 @@
-import "../networking/networking.css";
+import './networking.css';
 
 export function pagesNetworking(): string {
 
@@ -131,7 +131,7 @@ export function pagesNetworking(): string {
 
           </div>
         </section>
-
+      </div>
     
     </div>
     `;

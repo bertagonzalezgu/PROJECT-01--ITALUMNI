@@ -71,13 +71,13 @@ export function topBarDesktop(props: TopBarPropsDesktop): string{
               <ul>
                 <li id="nav-home" class="nav__item
                   ${props.activePage === 'home' ? 'nav__item--active' : ''}">
-                  <a href="#">Home</a></li>
+                  <a href="#">Inici</a></li>
                 <li id="nav-networking" class="nav__item
                   ${props.activePage === 'networking' ? 'nav__item--active' : ''}">
-                  <a href="#">Networking</a></li>
+                  <a href="#">Xarxa</a></li>
                 <li id="nav-jobs" class="nav__item
                   ${props.activePage === 'jobs' ? 'nav__item--active' : ''}">
-                  <a href="#">Job Opportunities</a></li>
+                  <a href="#">Oportunitats de feina</a></li>
               </ul>
             </div>
           

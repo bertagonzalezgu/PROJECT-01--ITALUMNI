@@ -1,5 +1,9 @@
 
-export function navBar(): string {
+interface NavBarPropsDesktop{
+    activePage: 'home' | 'networking' | 'jobs';
+}
+
+export function navBar(props: NavBarPropsDesktop): string {
 
     return /* html*/ `
     <nav class="nav">
@@ -7,12 +11,18 @@ export function navBar(): string {
           <img src="/src/assets/img/Header.svg" alt="Logo Alumni">
         
         <div class="nav__pages">
-          <ul>
-            <li>Inici</li>
-            <li>Xarxa</li>
-            <li>Oportunitats de Feina</li>
-          </ul>
-        </div>
+              <ul>
+                <li id="nav-home" class="nav__item
+                  ${props.activePage === 'home' ? 'nav__item--active' : ''}">
+                  <a href="#">Inici</a></li>
+                <li id="nav-networking" class="nav__item
+                  ${props.activePage === 'networking' ? 'nav__item--active' : ''}">
+                  <a href="#">Xarxa</a></li>
+                <li id="nav-jobs" class="nav__item
+                  ${props.activePage === 'jobs' ? 'nav__item--active' : ''}">
+                  <a href="#">Oportunitats de feina</a></li>
+              </ul>
+            </div>
         </div>
         <div class="nav__buttons">
           <button class="btn btn--white"><img src="/src/assets/icons/card.png" alt="Icono carta">Apunta't</button>

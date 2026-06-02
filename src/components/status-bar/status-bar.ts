@@ -1,5 +1,5 @@
 
-import "/Especialització_ItAcademy/PROJECTE 1 ITAlumni/first-itacademy-project-berta/src/components/status-bar/status-bar.css";
+import './status-bar.css';
 
 export function statusBar(): string {
 

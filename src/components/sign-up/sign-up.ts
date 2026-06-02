@@ -1,4 +1,4 @@
-import '../sign-up/sign-up.css'
+import './sign-up.css'
 export function signUp(): string {
 
     return /* html*/ `

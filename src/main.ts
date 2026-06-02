@@ -15,7 +15,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML =  /* html*/ `
 
 <main id="main-content">
 
-  <div id="splash">${splash()}</div>
+  <div id="splash" class="hidden">${splash()}</div>
   <div id="sign-up" class="hidden">${signUp()}</div>
 
   <div id="status-bar" class="hidden">${statusBar()}</div>
@@ -26,65 +26,158 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML =  /* html*/ `
     showFilters: false 
   })}</div>
 
+  <div id="nav-bar" class="hidden">${navBar({ 
+    activePage: 'home'
+  })}</div>
+
   <div id="top-bar-desktop" class="hidden">${topBarDesktop({ 
     activePage: 'home'
   })}</div>
 
   <div id="home-mobile" class="hidden">${pagesHomeMobile()}</div>
+  <div id="home-desktop" class="hidden">${pagesHomeDesktop()}</div>
   <div id="networking" class="hidden">${pagesNetworking()}</div>
   <div id="jobs-mobile" class="hidden">${pagesJobsMobile()}</div>
-  
-  <div id="tab-bar" class="hidden">${tabBar()}</div>
-
-  <div id="nav-bar">${navBar()}</div>
-
-  <div id="home-desktop">${pagesHomeDesktop()}</div>
   <div id="jobs-desktop" class="hidden">${pagesJobsDesktop()}</div>
 
-  <div id="footer">${footer()}</div>
+  <div id="footer" class="hidden">${footer()}</div>
+
+  <div id="tab-bar" class="hidden">${tabBar()}</div>
+
 </main>
 `;
 
-document.querySelector('.btn-register')!.addEventListener('click', () => {
-  document.getElementById('sign-up')!.classList.add('hidden');
-  document.getElementById('home-mobile')!.classList.remove('hidden');
-  document.getElementById('footer')!.classList.remove('hidden');
-  document.getElementById('home-desktop')!.classList.remove('hidden');
-  document.getElementById('nav-bar')!.classList.add('hidden');
-  document.getElementById('tab-bar')!.classList.remove('hidden');
-  document.getElementById('status-bar')!.classList.remove('hidden');
-  document.getElementById('top-bar-mobile')!.classList.remove('hidden');
-  document.getElementById('top-bar-desktop')!.classList.remove('hidden');
+let isUserRegistered = false;
 
-document.getElementById('nav-home')?.addEventListener('click', () => {
-  document.getElementById('home-desktop')!.classList.remove('hidden');
-  document.getElementById('networking')!.classList.add('hidden');
-  document.getElementById('jobs-desktop')!.classList.add('hidden');
-});
+const pages = [
+  {id: 'splash', needRegister: false},
+  {id: 'sign-up', needRegister: false},
+  {id: 'home-desktop', needRegister: false},
+  {id: 'home-mobile', needRegister: true},
+  {id: 'networking', needRegister: true},
+  {id: 'jobs-desktop', needRegister: true},
+  {id: 'jobs-mobile', needRegister: true}
+]
 
-document.getElementById('nav-networking')?.addEventListener('click', () => {
-  document.getElementById('home-desktop')!.classList.add('hidden');
-  document.getElementById('networking')!.classList.remove('hidden');
-  document.getElementById('jobs-desktop')!.classList.add('hidden');
-});
+// Funciones auxiliares:
 
-document.getElementById('nav-jobs')?.addEventListener('click', () => {
-  document.getElementById('home-desktop')!.classList.add('hidden');
-  document.getElementById('networking')!.classList.add('hidden');
-  document.getElementById('jobs-desktop')!.classList.remove('hidden');
-});
+function hideAllPages(){
+  pages.forEach((page) => {
+    const element = document.getElementById(page.id);
+    if (element !== null) {
+      element.classList.add('hidden');
+    }
+  });
+}
 
-});
-
-document.querySelector('.btn--large')?.addEventListener('click', () => {
-  document.getElementById('splash')!.classList.add('hidden');
-  document.getElementById('sign-up')!.classList.remove('hidden');
-  document.getElementById('footer')!.classList.add('hidden');
-});
-
-document.querySelector('.home-hero__btn--color')?.addEventListener('click', () => {
-  document.getElementById('home-desktop')!.classList.add('hidden');
+function showSignUp(){
+  hideAllPages();
   document.getElementById('nav-bar')!.classList.add('hidden');
   document.getElementById('sign-up')!.classList.remove('hidden');
-});
+}
+
+// Lógica de navegación:
+
+function navTo(section: string){
+  const targetPage = pages.find(p => p.id === section || (section === 'home' && p.id === 'home-desktop'))
+
+  if(targetPage?.needRegister === true && isUserRegistered === false){
+      showSignUp() 
+      return; 
+  }
+
+  hideAllPages();
+
+  const isMobile = window.innerWidth < 768;
+
+  switch(section){
+
+    case 'home':
+      if(isMobile === true){
+      document.getElementById('home-mobile')!.classList.remove('hidden');
+    } else{
+      document.getElementById('home-desktop')!.classList.remove('hidden');
+      document.getElementById('nav-bar')!.classList.remove('hidden');
+      document.getElementById('footer')!.classList.remove('hidden');
+    }
+    break;
+
+    case 'networking':
+      document.getElementById('networking')!.classList.remove('hidden');
+      document.getElementById('top-bar-desktop')!.classList.remove('hidden');
+      document.getElementById('footer')!.classList.remove('hidden');
+      document.getElementById('nav-bar')!.classList.add('hidden');
+    break;
+
+    case 'jobs':
+      if(isMobile === true){
+      document.getElementById('jobs-mobile')!.classList.remove('hidden');
+    } else{
+      document.getElementById('jobs-desktop')!.classList.remove('hidden');
+    }
+    break;
+
+    case 'sign-up':
+      document.getElementById('sign-up')!.classList.remove('hidden');
+    break;
+
+    case 'splash':      
+      document.getElementById('splash')!.classList.remove('hidden');
+    break;
+
+    default:
+      console.log("This section doesn't exist")
+  }
+  
+}
+
+// Botones:
+
+const btnSplash = document.querySelector('.btn--large');
+if(btnSplash !== null){
+  btnSplash.addEventListener('click', () => {
+    navTo('sign-up')
+  });
+}
+
+const btnRegister = document.querySelector('.btn-register');
+if(btnRegister !== null){
+  btnRegister.addEventListener('click', () => {
+    isUserRegistered = true;
+
+    if(window.innerWidth < 768){
+      document.getElementById('tab-bar')!.classList.remove('hidden');
+      document.getElementById('status-bar')!.classList.remove('hidden');
+    } else{
+      document.getElementById('nav-bar')!.classList.add('hidden');
+      document.getElementById('top-bar-desktop')!.classList.remove('hidden');
+      document.getElementById('footer')!.classList.remove('hidden');
+    }
+
+    navTo('home')
+  });
+}
+
+const btnHeroHome = document.querySelector('.home-hero__btn--color')
+
+if(btnHeroHome !== null){
+  btnHeroHome.addEventListener('click', () => {
+    showSignUp()
+  });
+}
+
+// Para arrancar con diferentes páginas y componentes des de desktop y mobile:
+
+const startMobileApp = window.innerWidth < 768;
+
+if (startMobileApp === true) {
+  navTo('splash');
+} else {
+  document.getElementById('nav-bar')!.classList.remove('hidden');
+  document.getElementById('footer')!.classList.remove('hidden');  
+  console.log("intentant veure el footer")
+
+  navTo('home')
+}
+
 

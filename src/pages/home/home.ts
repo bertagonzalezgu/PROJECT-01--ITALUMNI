@@ -1,5 +1,5 @@
 
-import '../home/home.css';
+import './home.css';
 
 export function pagesHomeDesktop(): string {
 

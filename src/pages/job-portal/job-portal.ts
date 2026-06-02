@@ -1,4 +1,4 @@
-import '../job-portal/job-portal.css'
+import './job-portal.css'
 
 export function pagesJobsDesktop(): string {
 
