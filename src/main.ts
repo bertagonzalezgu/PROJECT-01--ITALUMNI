@@ -2,7 +2,7 @@ import './style.css'
 import { pagesHomeDesktop, pagesHomeMobile } from './pages/home/home'
 import { pagesNetworking } from './pages/networking/networking';
 import { pagesJobsDesktop, pagesJobsMobile } from './pages/job-portal/job-portal';
-import { navBar } from './components/nav-bar'
+import { navBar } from './components/nav-bar/nav-bar'
 import { splash } from './components/splash/splash'
 import { statusBar } from './components/status-bar/status-bar'
 import { footer } from './components/footer/footer';

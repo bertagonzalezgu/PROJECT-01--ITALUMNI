@@ -62,7 +62,7 @@ export function topBarDesktop(props: TopBarPropsDesktop): string{
         <div class="nav__box">
 
           <div class="nav__box-logo">
-            <img src="/src/assets/icons/top-bar/logo_desktop.svg" alt="Logo">
+            <img class="nav__box-logo-img" src="/src/assets/icons/top-bar/logo_desktop.svg" alt="Logo">
             <p class="nav__brand-name">Alumni Connect</p> 
           </div>
                 

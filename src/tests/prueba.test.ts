@@ -4,7 +4,7 @@ import { splash } from '../components/splash/splash';
 import { signUp } from '../components/sign-up/sign-up';
 import { statusBar } from '../components/status-bar/status-bar';
 import { topBarMobile, topBarDesktop } from '../components/top-bar/top-bar';
-import { navBar } from '../components/nav-bar';
+import { navBar } from '../components/nav-bar/nav-bar';
 import { pagesHomeMobile, pagesHomeDesktop } from '../pages/home/home';
 import { pagesNetworking } from '../pages/networking/networking';
 import { pagesJobsMobile, pagesJobsDesktop } from '../pages/job-portal/job-portal';
