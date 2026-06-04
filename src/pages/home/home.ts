@@ -5,7 +5,7 @@ export function pagesHomeDesktop(): string {
 
     return /*html*/ `
     
-    <div class="home-content">
+    <div class="home-content" id="top">
 
         <section class="home-hero">
 
@@ -127,8 +127,8 @@ export function pagesHomeMobile(): string {
             <button class="home-grid-card__btn">Busca feina</button>
           </div>
 
-
         </section>
+
       </div>
     `;
 }
