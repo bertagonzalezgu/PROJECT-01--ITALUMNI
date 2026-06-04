@@ -4,7 +4,7 @@ interface NavBarPropsDesktop{
     activePage: 'home' | 'networking' | 'jobs';
 }
 
-export function navBar(props: NavBarPropsDesktop): string {
+export function navBar(props: NavBarPropsDesktop): string{
 
     return /* html*/ `
     <nav class="nav">
@@ -26,7 +26,7 @@ export function navBar(props: NavBarPropsDesktop): string {
             </div>
         </div>
         <div class="nav__buttons">
-          <button class="btn btn--white"><img src="/src/assets/icons/card.png" alt="Icono carta">Apunta't</button>
+          <button class="btn btn--white" data-action="sign-up"><img src="/src/assets/icons/card.png" alt="Icono carta">Apunta't</button>
           <button class="btn btn--color"><img src="/src/assets/icons/user.png" alt="Icono usuario">Com et veuen?</button>
         </div>
         

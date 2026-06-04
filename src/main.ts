@@ -83,7 +83,7 @@ function showSignUp(){
   document.getElementById('sign-up')!.classList.remove('hidden');
 }
 
-// Lógica de navegación:
+// Lògica de navegació:
 
 function navTo(section: string){
   console.log('navTo:', section, 'isUserRegistered:', isUserRegistered)
@@ -103,6 +103,9 @@ function navTo(section: string){
     case 'home':
       if(isMobile === true){
       document.getElementById('home-mobile')!.classList.remove('hidden');
+      document.getElementById('tab-bar')!.classList.remove('hidden');
+      document.getElementById('status-bar')!.classList.remove('hidden');
+      document.getElementById('top-bar-mobile')!.classList.remove('hidden');
     } else{
       document.getElementById('home-desktop')!.classList.remove('hidden');
       document.getElementById('nav-bar')!.classList.remove('hidden');
@@ -125,8 +128,13 @@ function navTo(section: string){
     case 'jobs':
       if(isMobile === true){
       document.getElementById('jobs-mobile')!.classList.remove('hidden');
+      document.getElementById('tab-bar')!.classList.remove('hidden');
+      document.getElementById('status-bar')!.classList.remove('hidden');
+      document.getElementById('top-bar-mobile')!.classList.remove('hidden');
     } else{
       document.getElementById('jobs-desktop')!.classList.remove('hidden');
+      document.getElementById('top-bar-desktop')!.classList.remove('hidden');
+      document.getElementById('footer')!.classList.remove('hidden');
     }
     break;
 
@@ -172,13 +180,21 @@ if(btnRegister !== null){
   });
 }
 
-const btnHeroHome = document.querySelector('.home-hero__btn--color')
+/* const btnHeroHome = document.querySelector('.home-hero__btn--color')
 
 if(btnHeroHome !== null){
   btnHeroHome.addEventListener('click', () => {
     showSignUp()
   });
-}
+} */
+
+// Para que muchos botones hagan la misma función:
+
+const btnSignUp = document.querySelectorAll('[data-action="sign-up"]');
+
+btnSignUp.forEach(btn => {
+  btn.addEventListener('click', showSignUp);
+});
 
 // Para arrancar con diferentes páginas y componentes des de desktop y mobile:
 

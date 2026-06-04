@@ -3,7 +3,8 @@ import './home.css';
 
 export function pagesHomeDesktop(): string {
 
-    return `
+    return /*html*/ `
+    
     <div class="home-content">
 
         <section class="home-hero">
@@ -12,7 +13,7 @@ export function pagesHomeDesktop(): string {
           <p class="home-hero__text">Connectant i empoderant a la nostra comunitat global d'alumnes</p>
 
           <div class="home-hero__buttons">
-            <button class="btn home-hero__btn--color">Uneix-te</button>
+            <button class="btn home-hero__btn--color" data-action="sign-up">Uneix-te</button>
             <button class="btn home-hero__btn--white">Mira que fem</button>
           </div>
 
@@ -30,19 +31,19 @@ export function pagesHomeDesktop(): string {
                 <div class="home-benefits__card">
                 <img src="src/assets/icons/Icon__Hat.svg" alt="Hat icon">
                 <p class="home-benefits__text" >Comparteix i no perdis el contacte: Puja els teus moments importants, explica com va tot i queda amb els companys. Una xarxa per estar més a prop.</p>
-                <button class="btn home-benefits__btn">Apunta't ja</button>
+                <button class="btn home-benefits__btn" data-action="sign-up">Apunta't ja</button>
               </div>
 
               <div class="home-benefits__card">
                 <img src="src/assets/icons/Icon__Comments.svg" alt="Comments icon">
                 <p class="home-benefits__text" >Participa en discussions: Intercanvia coneixements, punts de vista i opinions sobre temes que t'interessen.</p>
-                <button class="btn home-benefits__btn">Apunta't ja</button>
+                <button class="btn home-benefits__btn" data-action="sign-up">Apunta't ja</button>
               </div>
 
               <div class="home-benefits__card">
                 <img src="src/assets/icons/Icon__a-add.svg" alt="Add icon">
                 <p class="home-benefits__text" >Xarxa Alumni: Connecta amb companys de promoció, fes noves amistats i crea records per durar tota la vida</p>
-                <button class="btn home-benefits__btn">Apunta't ja</button>
+                <button class="btn home-benefits__btn" data-action="sign-up">Apunta't ja</button>
               </div>
               </div>
 
