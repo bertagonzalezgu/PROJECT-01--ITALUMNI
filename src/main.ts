@@ -53,7 +53,7 @@ const pages = [
   {id: 'splash', needRegister: false},
   {id: 'sign-up', needRegister: false},
   {id: 'home-desktop', needRegister: false},
-  {id: 'home-mobile', needRegister: true},
+  {id: 'home-mobile', needRegister: false},
   {id: 'networking', needRegister: true},
   {id: 'jobs-desktop', needRegister: true},
   {id: 'jobs-mobile', needRegister: true}
@@ -87,16 +87,22 @@ function showSignUp(){
 
 function navTo(section: string){
   console.log('navTo:', section, 'isUserRegistered:', isUserRegistered)
-  const targetPage = pages.find(p => p.id === section || (section === 'home' && p.id === 'home-desktop'))
-  console.log('targetPage:', targetPage)
+  
+  const isMobile = window.innerWidth < 768;
+
+  let checkPageId = section;
+  // ternario para verificar
+  if (section === 'home') checkPageId = isMobile? 'home-mobile':'home-desktop';
+  if (section === 'jobs') checkPageId = isMobile? 'jobs-mobile':'jobs-desktop';
+
+  const targetPage = pages.find(p => p.id === checkPageId);
+  
   if(targetPage?.needRegister === true && isUserRegistered === false){
       showSignUp() 
       return; 
   }
 
   hideAllPages();
-
-  const isMobile = window.innerWidth < 768;
 
   switch(section){
 
@@ -108,8 +114,15 @@ function navTo(section: string){
       document.getElementById('top-bar-mobile')!.classList.remove('hidden');
     } else{
       document.getElementById('home-desktop')!.classList.remove('hidden');
-      document.getElementById('nav-bar')!.classList.remove('hidden');
       document.getElementById('footer')!.classList.remove('hidden');
+
+      if(isUserRegistered === true){
+        document.getElementById('nav-bar')!.classList.add('hidden');
+        document.getElementById('top-bar-desktop')!.classList.remove('hidden');
+      } else{
+        document.getElementById('nav-bar')!.classList.remove('hidden');
+        document.getElementById('top-bar-desktop')!.classList.add('hidden');
+      }
     }
     break;
 
@@ -164,17 +177,8 @@ if(btnSplash !== null){
 const btnRegister = document.querySelector('.btn-register');
 if(btnRegister !== null){
   btnRegister.addEventListener('click', () => {
-    console.log('btnRegister clicat!')
+    // console.log('btnRegister clicat')
     isUserRegistered = true;
-
-    if(window.innerWidth < 768){
-      document.getElementById('tab-bar')!.classList.remove('hidden');
-      document.getElementById('status-bar')!.classList.remove('hidden');
-    } else{
-      document.getElementById('nav-bar')!.classList.add('hidden');
-      document.getElementById('top-bar-desktop')!.classList.remove('hidden');
-      document.getElementById('footer')!.classList.remove('hidden');
-    }
 
     navTo('home');
   });
@@ -222,6 +226,21 @@ document.getElementById('nav-networking')?.addEventListener('click', (e) => {
   navTo('networking')
 });
 document.getElementById('nav-jobs')?.addEventListener('click', (e) => {
+  e.preventDefault();
+  navTo('jobs')
+});
+
+// Top-bar listeners:
+
+document.getElementById('top-home')?.addEventListener('click', (e) => {
+  e.preventDefault();
+  navTo('home')
+});
+document.getElementById('top-networking')?.addEventListener('click', (e) => {
+  e.preventDefault();
+  navTo('networking')
+});
+document.getElementById('top-jobs')?.addEventListener('click', (e) => {
   e.preventDefault();
   navTo('jobs')
 });
