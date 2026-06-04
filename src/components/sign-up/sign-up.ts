@@ -70,7 +70,7 @@ export function signUp(): string {
       Continua amb Facebook
     </button>  
  
-    <p class="footer">Ja t'has registrat? <a href="#">Inicia sessió</a></p>
+    <p class="footer-sign-up">Ja t'has registrat? <a href="#">Inicia sessió</a></p>
  
   </div>
   </div>

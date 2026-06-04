@@ -147,17 +147,19 @@
     height: 20px; 
 }
 
-.footer{
+.footer-sign-up{
     display: flex;
+    flex-direction: row;
     text-align: center;
     justify-content: center;
     margin-top: 20px;
     font-size: 14px;
     color: var(--color-black);
+    background: var(--color-white);
     gap: 30px;
 }
     
-.footer a{
+.footer-sign-up a{
     color: var(--color-primary);
     font-family: "Source Sans Light";
     text-decoration: none;
