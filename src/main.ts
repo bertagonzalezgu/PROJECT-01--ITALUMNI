@@ -194,8 +194,10 @@ if (startMobileApp === true) {
   navTo('home')
 }
 
+// Nav listeners:
+
 document.getElementById('nav-home')?.addEventListener('click', (e) => {
-  e.preventDefault();
+  e.preventDefault(); // evita el reseteo de la página
   navTo('home')
 });
 document.getElementById('nav-networking')?.addEventListener('click', (e) => {
@@ -208,3 +210,20 @@ document.getElementById('nav-jobs')?.addEventListener('click', (e) => {
   navTo('jobs')
 });
 
+// Filtres:
+
+document.querySelector('.search-input-desktop')?.addEventListener('input', (e) => {
+  const query = (e.target as HTMLInputElement).value.toLowerCase();
+  const cards = document.querySelectorAll('#alumni-grid .card');
+  
+  cards.forEach(card => {
+    const name = card.getAttribute('data-name') ?? '';
+    const role = card.getAttribute('data-role') ?? '';
+    
+    if(name.includes(query) || role.includes(query)){
+      (card as HTMLElement).style.display = '';
+    } else {
+      (card as HTMLElement).style.display = 'none';
+    }
+  });
+});

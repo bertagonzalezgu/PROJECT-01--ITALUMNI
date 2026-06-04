@@ -44,7 +44,7 @@ export function topBarMobile(props: TopBarPropsMobile): string{
           </button>
           <button class="topbar__filter-btn">
             <img src="src/assets/icons/top-bar/job-portal_filters/filter.svg" alt="">
-            <span>perience Level \/</span>
+            <span>Experience Level \/</span>
           </button>
         </div>
 
