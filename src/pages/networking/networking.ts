@@ -15,7 +15,7 @@ export function pagesNetworking(): string {
     `).join('')
 
     return /* html*/ `
-    <div class="container">
+    <div class="container-networking">
   
       <section class="top-bar-section-desktop">
         <div class="search-desktop">

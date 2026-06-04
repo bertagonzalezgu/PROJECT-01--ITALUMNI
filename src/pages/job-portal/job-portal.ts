@@ -4,7 +4,7 @@ import { jobs } from '../../data/jobs';
 export function pagesJobsDesktop(): string{
 
     const jobCards = jobs.map(job => `
-      <div class="card" data-title="${job.title.toLowerCase()}" data-type="${job.type.toLowerCase()}">
+      <div class="card-jobs" data-title="${job.title.toLowerCase()}" data-type="${job.type.toLowerCase()}">
         <div class="card-body__text">
           <h3>${job.title}</h3>
           <p>${job.type}</p>
@@ -16,7 +16,7 @@ export function pagesJobsDesktop(): string{
     `).join('');
 
     return `
-      <div class="container">
+      <div class="container-jobs">
         
           <h1 class="cards-grid__title">Ofertes de feina</h1>
 
@@ -32,7 +32,7 @@ export function pagesJobsDesktop(): string{
 export function pagesJobsMobile(): string{
 
     return /* html*/ `
-    <div class="container">
+    <div class="container-jobs">
         
           <h1 class="cards-grid__title">Ofertes de feina</h1>
 

@@ -5,7 +5,7 @@ export function signUp(): string {
 
     <div class="sign-up-bg">
 
-    <div class="card">
+    <div class="card-sign-up">
  
     <h1 class="card__title">Crea un compte</h1>
     <p class="card__subtitle">Uneix-te a nosaltres per connectar-te i compartir oportunitats!</p>

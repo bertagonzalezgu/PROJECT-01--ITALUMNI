@@ -1,4 +1,4 @@
-.container{
+.container-networking{
   width: 100%;
   padding: 20px;
 }
@@ -73,6 +73,10 @@
 }
 
 @media (min-width: 768px){
+
+.container-networking{
+  display: block;
+}
 
 .top-bar-section-desktop{
   width: 100%;

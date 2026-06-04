@@ -1,4 +1,4 @@
-.container{
+.container-jobs{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -20,7 +20,7 @@
     padding: 10px 0px;
 }
 
-.card{
+.card-jobs{
     display: flex;
     width: 100%;
     flex-direction: row;
@@ -88,7 +88,7 @@
 
 @media (min-width: 768px){
 
-.container{
+.container-jobs{
     max-width: 1200px;
     margin: 0 auto;
 }

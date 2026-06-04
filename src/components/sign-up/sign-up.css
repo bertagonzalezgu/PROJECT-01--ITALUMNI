@@ -1,4 +1,4 @@
-.card{ 
+.card-sign-up{ 
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -180,7 +180,7 @@
     margin: 0;
 }
 
-.card{ 
+.card-sign-up{ 
     margin: 50px;
     width: 720px;
     height: auto;
