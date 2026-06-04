@@ -263,5 +263,40 @@ document.querySelector('.search-input-desktop')?.addEventListener('input', (e) =
   });
 });
 
+// Filtres de butons per networking:
+
+document.addEventListener('click', (e) => {
+  const clickedButton = (e.target as HTMLElement).closest('.filters-desktop .btn-filter');
+  
+  if (clickedButton) {
+    document.querySelectorAll('.filters-desktop .btn-filter').forEach(btn => btn.classList.remove('active'));
+    clickedButton.classList.add('active');
+
+    const alumniGrid = document.querySelector('#alumni-grid');
+    const panelActivity = document.querySelector('.panel-activity');
+    const panelSuggestions = document.querySelector('.panel-suggestions');
+    
+    const filter = clickedButton.getAttribute('data-filter');
+
+    if (filter === 'recent') {
+      panelActivity?.classList.remove('hidden');
+      panelSuggestions?.classList.add('hidden');
+      alumniGrid?.classList.add('hidden');
+    } 
+    else if (filter === 'popular') {
+      alumniGrid?.classList.remove('hidden');
+      panelSuggestions?.classList.add('hidden');
+      panelActivity?.classList.add('hidden');
+      
+    } 
+    else if (filter === 'connected') {
+      panelSuggestions?.classList.remove('hidden');
+      alumniGrid?.classList.add('hidden');
+      panelActivity?.classList.add('hidden');
+      
+    }
+  }
+});
+
 // Filtres de cerca per jobs:
 

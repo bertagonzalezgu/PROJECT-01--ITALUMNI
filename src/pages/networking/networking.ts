@@ -25,13 +25,13 @@ export function pagesNetworking(): string {
         
         <div class="filters-desktop">
           <span>Filtres:</span>
-          <button class="btn-filter" data-filer="recent">Activitats recents</button>
-          <button class="btn-filter" data-filer="popular">Popular</button>
-          <button class="btn-filter" data-filer="connected">Més connectats</button>
+          <button class="btn-filter" data-filter="recent">Activitats recents</button>
+          <button class="btn-filter" data-filter="popular">Popular</button>
+          <button class="btn-filter" data-filter="connected">Més connectats</button>
         </div>
       </section>
 
-      <section class="cards-grid" id="alumni-grid">
+      <section class="cards-grid hidden" id="alumni-grid">
         
         ${alumniCards}
 
