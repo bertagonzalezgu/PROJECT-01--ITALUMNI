@@ -210,7 +210,7 @@ document.getElementById('nav-jobs')?.addEventListener('click', (e) => {
   navTo('jobs')
 });
 
-// Filtres:
+// Filtres de cerca per networking:
 
 document.querySelector('.search-input-desktop')?.addEventListener('input', (e) => {
   const query = (e.target as HTMLInputElement).value.toLowerCase();
@@ -227,3 +227,6 @@ document.querySelector('.search-input-desktop')?.addEventListener('input', (e) =
     }
   });
 });
+
+// Filtres de cerca per jobs:
+
