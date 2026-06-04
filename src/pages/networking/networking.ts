@@ -1,6 +1,18 @@
 import './networking.css';
+import { alumni } from '../../data/alumni'; //importar base de dades
 
 export function pagesNetworking(): string {
+
+  const alumniCards = alumni.map(p => `
+    <div class="card" data-name="${p.name.toLowerCase()}" data-role="${p.role.toLowerCase()}">
+      <div class="card-body">
+        <h3>${p.name}</h3>
+        <p class="role">${p.role}</p>
+        <p class="location">${p.location}</p>
+      </div>
+      <button class="btn btn-primary">Missatge</button>
+    </div>
+    `).join('')
 
     return /* html*/ `
     <div class="container">
@@ -13,67 +25,15 @@ export function pagesNetworking(): string {
         
         <div class="filters-desktop">
           <span>Filtres:</span>
-          <button class="btn-filter">Activitats recents</button>
-          <button class="btn-filter">Popular</button>
-          <button class="btn-filter">Més connectats</button>
+          <button class="btn-filter" data-filer="recent">Activitats recents</button>
+          <button class="btn-filter" data-filer="popular">Popular</button>
+          <button class="btn-filter" data-filer="connected">Més connectats</button>
         </div>
       </section>
 
-      <section class="cards-grid">
+      <section class="cards-grid" id="alumni-grid">
         
-        <div class="card">
-          <div class="card-body">
-            <h3>Jane Smith</h3>
-            <p class="role">Co-Fundadora a ABC Inc</p>
-            <p class="location">Nova York, NY</p>
-          </div>
-          <button class="btn btn-primary">Missatge</button>
-        </div>
-
-        <div class="card">
-          <div class="card-body">
-            <h3>John Doe</h3>
-            <p class="role">Product Manager a XYZ Corp</p>
-            <p class="location">San Francisco, CA</p>
-          </div>
-          <button class="btn btn-primary">Missatge</button>
-        </div>
-
-        <div class="card">
-          <div class="card-body">
-            <h3>Alice Johnson</h3>
-            <p class="role">Senior Developer a Tech Solutions</p>
-            <p class="location">Remote</p>
-          </div>
-          <button class="btn btn-primary">Missatge</button>
-        </div>
-
-        <div class="card">
-          <div class="card-body">
-            <h3>David Brown</h3>
-            <p class="role">Marketing Specialist a Brand Co</p>
-            <p class="location">Chicago, IL</p>
-          </div>
-          <button class="btn btn-primary">Missatge</button>
-        </div>
-
-        <div class="card-mobile-only">
-              <div class="card-body">
-                <h3>Sarah Johnson</h3>
-                <p class="role">Marketing Director a GreenWave</p>
-                <p class="location"></p>
-              </div>
-              <button class="btn btn-primary">Missatge</button>
-            </div>
-
-            <div class="card-mobile-only">
-              <div class="card-body">
-                <h3>Emily Davis</h3>
-                <p class="role">Research Scientist a BioTech Labs</p>
-                <p class="location"></p>
-              </div>
-              <button class="btn btn-primary">Missatge</button>
-            </div>
+        ${alumniCards}
 
       </section>
 

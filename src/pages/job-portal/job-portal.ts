@@ -1,6 +1,18 @@
 import './job-portal.css'
+import { jobs } from '../../data/jobs';
 
-export function pagesJobsDesktop(): string {
+export function pagesJobsDesktop(): string{
+
+    const jobCards = jobs.map(job => `
+    <div class="card" data-title="${job.title.toLowerCase()}" data-type="${job.type.toLowerCase()}">
+      <div class="card-body__text">
+        <h3>${job.title}</h3>
+        <p>${job.type}</p>
+        <p>${job.date}</p>
+        <button class="btn btn-primary">Aplica Ara</button>
+      </div>
+    </div>
+    `).join('');
 
     return `
     <div class="container">
@@ -76,7 +88,7 @@ export function pagesJobsDesktop(): string {
     `;
 }
 
-export function pagesJobsMobile(): string {
+export function pagesJobsMobile(): string{
 
     return /* html*/ `
     <div class="container">

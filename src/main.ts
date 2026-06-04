@@ -68,6 +68,13 @@ function hideAllPages(){
       element.classList.add('hidden');
     }
   });
+
+  document.getElementById('nav-bar')!.classList.add('hidden');
+  document.getElementById('top-bar-desktop')!.classList.add('hidden');
+  document.getElementById('footer')!.classList.add('hidden');
+  document.getElementById('status-bar')!.classList.add('hidden');
+  document.getElementById('top-bar-mobile')!.classList.add('hidden');
+  document.getElementById('tab-bar')!.classList.add('hidden');
 }
 
 function showSignUp(){
@@ -79,8 +86,9 @@ function showSignUp(){
 // Lógica de navegación:
 
 function navTo(section: string){
+  console.log('navTo:', section, 'isUserRegistered:', isUserRegistered)
   const targetPage = pages.find(p => p.id === section || (section === 'home' && p.id === 'home-desktop'))
-
+  console.log('targetPage:', targetPage)
   if(targetPage?.needRegister === true && isUserRegistered === false){
       showSignUp() 
       return; 
@@ -104,9 +112,14 @@ function navTo(section: string){
 
     case 'networking':
       document.getElementById('networking')!.classList.remove('hidden');
-      document.getElementById('top-bar-desktop')!.classList.remove('hidden');
-      document.getElementById('footer')!.classList.remove('hidden');
-      document.getElementById('nav-bar')!.classList.add('hidden');
+      if(isMobile === true){
+        document.getElementById('tab-bar')!.classList.remove('hidden');
+        document.getElementById('status-bar')!.classList.remove('hidden');
+        document.getElementById('top-bar-mobile')!.classList.remove('hidden');
+    } else{
+        document.getElementById('top-bar-desktop')!.classList.remove('hidden');
+        document.getElementById('footer')!.classList.remove('hidden');
+    }
     break;
 
     case 'jobs':
@@ -143,6 +156,7 @@ if(btnSplash !== null){
 const btnRegister = document.querySelector('.btn-register');
 if(btnRegister !== null){
   btnRegister.addEventListener('click', () => {
+    console.log('btnRegister clicat!')
     isUserRegistered = true;
 
     if(window.innerWidth < 768){
@@ -154,7 +168,7 @@ if(btnRegister !== null){
       document.getElementById('footer')!.classList.remove('hidden');
     }
 
-    navTo('home')
+    navTo('home');
   });
 }
 
@@ -180,4 +194,17 @@ if (startMobileApp === true) {
   navTo('home')
 }
 
+document.getElementById('nav-home')?.addEventListener('click', (e) => {
+  e.preventDefault();
+  navTo('home')
+});
+document.getElementById('nav-networking')?.addEventListener('click', (e) => {
+  e.preventDefault();
+  console.log('nav-networking clicat!')
+  navTo('networking')
+});
+document.getElementById('nav-jobs')?.addEventListener('click', (e) => {
+  e.preventDefault();
+  navTo('jobs')
+});
 
