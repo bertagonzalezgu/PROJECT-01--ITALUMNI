@@ -2,7 +2,7 @@
 
 Plataforma per a la comunitat d'exalumnes de l'IT Academy. Permet visualitzar perfils d'alumni, cercar ofertes de feina i connectar amb professionals del sector.
 
-🔗 **Demo en viu:** [https://project-01-italumni-6xewdxb9v-berta-projects.vercel.app](https://project-01-italumni-6xewdxb9v-berta-projects.vercel.app)
+🔗 **Demo en viu:** [https://project-01-italumni-l0ksxoqcv-berta-projects.vercel.app](https://project-01-italumni-l0ksxoqcv-berta-projects.vercel.app)
 
 ---
 
