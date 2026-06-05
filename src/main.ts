@@ -48,6 +48,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML =  /* html*/ `
 `;
 
 let isUserRegistered = false;
+let currentPage = 'home'
 
 const pages = [
   {id: 'splash', needRegister: false},
@@ -86,6 +87,9 @@ function showSignUp(){
 // Lògica de navegació:
 
 function navTo(section: string){
+
+  currentPage = section
+
   console.log('navTo:', section, 'isUserRegistered:', isUserRegistered)
   
   const isMobile = window.innerWidth < 768;
@@ -111,6 +115,13 @@ function navTo(section: string){
       document.getElementById('home-mobile')!.classList.remove('hidden');
       document.getElementById('tab-bar')!.classList.remove('hidden');
       document.getElementById('status-bar')!.classList.remove('hidden');
+
+      document.getElementById('top-bar-mobile')!.innerHTML = topBarMobile({ 
+          title: 'Inici', 
+          showBack: false, 
+          showSearch: true, 
+          showFilters: false 
+        });
       document.getElementById('top-bar-mobile')!.classList.remove('hidden');
     } else{
       document.getElementById('home-desktop')!.classList.remove('hidden');
@@ -131,7 +142,15 @@ function navTo(section: string){
       if(isMobile === true){
         document.getElementById('tab-bar')!.classList.remove('hidden');
         document.getElementById('status-bar')!.classList.remove('hidden');
+
+        document.getElementById('top-bar-mobile')!.innerHTML = topBarMobile({ 
+          title: 'Xarxa', 
+          showBack: true, 
+          showSearch: true, 
+          showFilters: false 
+        });
         document.getElementById('top-bar-mobile')!.classList.remove('hidden');
+
     } else{
         document.getElementById('top-bar-desktop')!.classList.remove('hidden');
         document.getElementById('footer')!.classList.remove('hidden');
@@ -143,12 +162,36 @@ function navTo(section: string){
       document.getElementById('jobs-mobile')!.classList.remove('hidden');
       document.getElementById('tab-bar')!.classList.remove('hidden');
       document.getElementById('status-bar')!.classList.remove('hidden');
+
+      document.getElementById('top-bar-mobile')!.innerHTML = topBarMobile({ 
+          title: 'Ofertes de feina', 
+          showBack: true, 
+          showSearch: true, 
+          showFilters: true 
+        });
       document.getElementById('top-bar-mobile')!.classList.remove('hidden');
+
     } else{
       document.getElementById('jobs-desktop')!.classList.remove('hidden');
       document.getElementById('top-bar-desktop')!.classList.remove('hidden');
       document.getElementById('footer')!.classList.remove('hidden');
     }
+    break;
+
+    case 'profile':
+      if(isMobile === true){
+      document.getElementById('tab-bar')!.classList.remove('hidden');
+      document.getElementById('status-bar')!.classList.remove('hidden');
+
+      document.getElementById('top-bar-mobile')!.innerHTML = topBarMobile({ 
+          title: 'Perfil', 
+          showBack: true, 
+          showSearch: false, 
+          showFilters: false 
+        });
+      document.getElementById('top-bar-mobile')!.classList.remove('hidden');
+      }
+
     break;
 
     case 'sign-up':
@@ -245,29 +288,76 @@ document.getElementById('top-jobs')?.addEventListener('click', (e) => {
   navTo('jobs')
 });
 
-// Filtres de cerca per networking (search-bar):
+// Tab-bar listeners:
 
-document.querySelector('.search-input-desktop')?.addEventListener('input', (e) => {
-  const query = (e.target as HTMLInputElement).value.toLowerCase();
-  const cards = document.querySelectorAll('#alumni-grid .card');
+document.getElementById('tab-home')?.addEventListener('click', () => {
+  navTo('home')
+});
+document.getElementById('tab-networking')?.addEventListener('click', (e) => {
+  e.preventDefault();
+  navTo('networking')
+});
+document.getElementById('tab-jobs')?.addEventListener('click', (e) => {
+  e.preventDefault();
+  navTo('jobs')
+});
+document.getElementById('tab-profile')?.addEventListener('click', (e) => {
+  e.preventDefault();
+  navTo('profile')
+});
+
+// Filtres de cerca per networking i jobs (search-bar) per mobile i desktop:
+
+document.addEventListener('input', (e) => {
+  const target = e.target as HTMLElement;
+
+  if(target.matches('.search-input-desktop, .topbar__search input, .search-input-desktop-jobs')){ // inputs comuns
   
-  cards.forEach(card => {
-    const name = card.getAttribute('data-name') ?? '';
-    const role = card.getAttribute('data-role') ?? '';
-    
-    if(name.includes(query) || role.includes(query)){
-      (card as HTMLElement).style.display = '';
-    } else {
-      (card as HTMLElement).style.display = 'none';
+  const query = (e.target as HTMLInputElement).value.toLowerCase();
+
+    if(currentPage === 'networking'){
+      const cards = document.querySelectorAll('#alumni-grid .card, #alumni-grid-mobile .card'); // id + clase networking
+      
+      cards.forEach(card => {
+        const name = card.getAttribute('data-name') ?? '';
+        const role = card.getAttribute('data-role') ?? '';
+        
+        if(name.includes(query) || role.includes(query)){
+          (card as HTMLElement).style.display = '';
+        } else{
+          (card as HTMLElement).style.display = 'none';
+        }
+      });
     }
-  });
+
+    if(currentPage === 'jobs'){
+      const cards = document.querySelectorAll('#jobs-grid .card-jobs, #jobs-grid-mobile .card-jobs'); // id + clase jobs
+  
+      cards.forEach(card => {
+      const title = card.getAttribute('data-title') ?? '';
+      const type = card.getAttribute('data-type') ?? '';
+      
+      if(title.includes(query) || type.includes(query)){
+        (card as HTMLElement).style.display = '';
+      } else {
+        (card as HTMLElement).style.display = 'none';
+      }
+      });
+    }
+  
+  }
+  
 });
 
 // Filtres de cerca per jobs (search-bar):
 
-document.querySelector('.search-input-desktop-jobs')?.addEventListener('input', (e) => {
+/* document.addEventListener('input', (e) => {
+  const target = e.target as HTMLElement;
+
+  if(target.matches('.search-input-desktop, .topbar__search input')){
+  
   const query = (e.target as HTMLInputElement).value.toLowerCase();
-  const cards = document.querySelectorAll('#jobs-grid .card-jobs');
+  const cards = document.querySelectorAll('#jobs-grid .card-jobs, #jobs-grid-mobile .card-jobs');
   
   cards.forEach(card => {
     const title = card.getAttribute('data-title') ?? '';
@@ -278,8 +368,9 @@ document.querySelector('.search-input-desktop-jobs')?.addEventListener('input', 
     } else {
       (card as HTMLElement).style.display = 'none';
     }
-  });
-});
+    });
+  }
+}); */
 
 // Filtres de butons per networking:
 

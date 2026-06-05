@@ -37,7 +37,7 @@ export function pagesJobsDesktop(): string{
 export function pagesJobsMobile(): string{
 
     const jobCards = jobs.map(job => `
-      <div class="card" data-title="${job.title.toLowerCase()}" data-type="${job.type.toLowerCase()}">
+      <div class="card-jobs" data-title="${job.title.toLowerCase()}" data-type="${job.type.toLowerCase()}">
         <div class="card-body__text">
           <h3>${job.title}</h3>
           <p>${job.company}</p>
@@ -53,7 +53,7 @@ export function pagesJobsMobile(): string{
         
           <h1 class="cards-grid__title">Ofertes de feina</h1>
 
-        <section class="cards-grid">
+        <section class="cards-grid" id="jobs-grid-mobile">
 
           ${jobCards}
 

@@ -36,6 +36,12 @@ export function pagesNetworking(): string {
         ${alumniCards}
 
       </section>
+      <!-- Mobile -->
+      <section class="cards-grid-mobile" id="alumni-grid-mobile">
+        
+        ${alumniCards}
+
+      </section>
 
       <div class="panels-layout">
         
