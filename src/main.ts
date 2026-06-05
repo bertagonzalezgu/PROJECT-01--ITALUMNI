@@ -245,7 +245,7 @@ document.getElementById('top-jobs')?.addEventListener('click', (e) => {
   navTo('jobs')
 });
 
-// Filtres de cerca per networking:
+// Filtres de cerca per networking (search-bar):
 
 document.querySelector('.search-input-desktop')?.addEventListener('input', (e) => {
   const query = (e.target as HTMLInputElement).value.toLowerCase();
@@ -256,6 +256,24 @@ document.querySelector('.search-input-desktop')?.addEventListener('input', (e) =
     const role = card.getAttribute('data-role') ?? '';
     
     if(name.includes(query) || role.includes(query)){
+      (card as HTMLElement).style.display = '';
+    } else {
+      (card as HTMLElement).style.display = 'none';
+    }
+  });
+});
+
+// Filtres de cerca per jobs (search-bar):
+
+document.querySelector('.search-input-desktop-jobs')?.addEventListener('input', (e) => {
+  const query = (e.target as HTMLInputElement).value.toLowerCase();
+  const cards = document.querySelectorAll('#jobs-grid .card-jobs');
+  
+  cards.forEach(card => {
+    const title = card.getAttribute('data-title') ?? '';
+    const type = card.getAttribute('data-type') ?? '';
+    
+    if(title.includes(query) || type.includes(query)){
       (card as HTMLElement).style.display = '';
     } else {
       (card as HTMLElement).style.display = 'none';

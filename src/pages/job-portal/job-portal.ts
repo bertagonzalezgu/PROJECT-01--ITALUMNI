@@ -25,7 +25,7 @@ export function pagesJobsDesktop(): string{
           <input type="text" placeholder="Buscar alumni..." class="search-input-desktop-jobs">
         </div>
 
-        <section class="cards-grid">
+        <section class="cards-grid" id="jobs-grid">
 
           ${jobCards}
 
