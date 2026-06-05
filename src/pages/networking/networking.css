@@ -54,7 +54,7 @@
 }
 
 .btn{
-  width: 100px;
+  width: 10px;
   height: 30px;
   padding: 0px;
   display: flex;
@@ -71,6 +71,14 @@
   color: var(--color-white);
   border: transparent;
   background: var(--color-primary);
+}
+
+.btn-connect{
+  font-size: 14px;
+  font-family: "Source Sans Light";
+  color: var(--color-white);
+  border: transparent;
+  background: var(--gradient);
 }
 
 .panels-layout{

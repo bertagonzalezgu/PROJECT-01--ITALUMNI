@@ -9,6 +9,7 @@ import { footer } from './components/footer/footer';
 import { tabBar } from './components/tab-bar/tab-bar';
 import { topBarMobile, topBarDesktop} from './components/top-bar/top-bar';
 import { signUp } from './components/sign-up/sign-up'
+import { alumni } from './data/alumni';
 
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML =  /* html*/ `
@@ -407,5 +408,26 @@ document.addEventListener('click', (e) => {
   }
 });
 
-// Filtres de cerca per jobs:
+// Funcionalitat pels buttons de connectar entre alumnes:
+
+document.addEventListener('click', (e) => {
+  const btn = (e.target as HTMLElement).closest('.btn-connect');
+  if (!btn) return;
+
+  const card = btn.closest('.card');
+  if (!card) return;
+
+  const id = Number(card.getAttribute('data-id'));
+  const alumne = alumni.find(p => p.id === id);
+  if (!alumne) return;
+
+  alumne.connected = !alumne.connected;
+
+      // Actualitzar botons:
+      document.querySelectorAll(`.card[data-id="${id}"] .btn-connect`).forEach(b => {
+        b.textContent = alumne.connected ? 'Connectat' : 'Connectar';
+        b.classList.toggle('btn-primary', !alumne.connected);
+        b.classList.toggle('btn-connected', alumne.connected);
+      });
+});
 
