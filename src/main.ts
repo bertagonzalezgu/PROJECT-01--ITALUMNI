@@ -90,7 +90,6 @@ function navTo(section: string){
 
   currentPage = section
 
-  console.log('navTo:', section, 'isUserRegistered:', isUserRegistered)
   
   const isMobile = window.innerWidth < 768;
 
@@ -220,7 +219,6 @@ if(btnSplash !== null){
 const btnRegister = document.querySelector('.btn-register');
 if(btnRegister !== null){
   btnRegister.addEventListener('click', () => {
-    // console.log('btnRegister clicat')
     isUserRegistered = true;
 
     navTo('home');
@@ -252,7 +250,6 @@ if (startMobileApp === true) {
 } else {
   document.getElementById('nav-bar')!.classList.remove('hidden');
   document.getElementById('footer')!.classList.remove('hidden');  
-  console.log("intentant veure el footer")
 
   navTo('home')
 }
@@ -265,7 +262,6 @@ document.getElementById('nav-home')?.addEventListener('click', (e) => {
 });
 document.getElementById('nav-networking')?.addEventListener('click', (e) => {
   e.preventDefault();
-  console.log('nav-networking clicat!')
   navTo('networking')
 });
 document.getElementById('nav-jobs')?.addEventListener('click', (e) => {
