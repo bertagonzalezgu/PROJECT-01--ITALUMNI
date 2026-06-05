@@ -1,7 +1,23 @@
 
 import './home.css';
+import { events } from '../../data/events';
 
 export function pagesHomeDesktop(): string {
+
+    const eventCards = events.map(ev => `
+
+        <div class="event-card">          
+          <div class="event-card__info">
+            <span class="event-card__category">${ev.category}</span>
+            <h4 class="event-card__title">${ev.title}</h4>
+            <p class="event-card__location">${ev.location}</p>
+          </div>
+          <div class="event-card__img-box">
+            <img src="${ev.image}" alt="">
+          </div>
+        </div>
+
+    `).join('');
 
     return /*html*/ `
     
@@ -47,6 +63,13 @@ export function pagesHomeDesktop(): string {
               </div>
               </div>
 
+            </div>
+          </section>
+
+          <section class="events-section">
+            <h2 class="events-section__title">Esdeveniments</h2>
+            <div class="events-list">
+              ${eventCards}
             </div>
           </section>
 
