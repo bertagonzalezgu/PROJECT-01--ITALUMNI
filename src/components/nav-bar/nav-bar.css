@@ -21,7 +21,7 @@
   display: flex;
 }
 
-.btn {
+.btn-nav{
   padding: 10px 100px;
   display: flex;
   justify-content: center;
@@ -123,7 +123,7 @@
   gap: 20px;
 }
 
-.btn {
+.btn-nav {
   padding: 10px 20px;
   display: flex;
   justify-content: center;

@@ -4,13 +4,15 @@ import { alumni } from '../../data/alumni'; //importar base de dades
 export function pagesNetworking(): string {
 
   const alumniCards = alumni.map(p => `
-    <div class="card" data-name="${p.name.toLowerCase()}" data-role="${p.role.toLowerCase()}">
+    <div class="card" data-id="${p.id}" data-name="${p.name.toLowerCase()}" data-role="${p.role.toLowerCase()}">
       <div class="card-body">
         <h3>${p.name}</h3>
         <p class="role">${p.role}</p>
         <p class="location">${p.location}</p>
       </div>
-      <button class="btn btn-primary">Missatge</button>
+      <button class="btn ${p.connected ? 'btn-connected' : 'btn-primary'} btn-connect">
+      ${p.connected ? 'Connectat' : 'Connectar'}
+      </button>
     </div>
     `).join('')
 

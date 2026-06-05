@@ -73,6 +73,14 @@
   background: var(--color-primary);
 }
 
+.btn-connected{
+  font-size: 14px;
+  font-family: "Source Sans Light";
+  color: var(--color-white);
+  border: transparent;
+  background: var(--gradient);
+}
+
 .panels-layout{
   display: none;
 }
