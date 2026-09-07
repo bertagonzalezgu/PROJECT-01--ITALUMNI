@@ -21,7 +21,7 @@ export function pagesNetworking(): string {
   
       <section class="top-bar-section-desktop">
         <div class="search-desktop">
-          <img src="src/assets/icons/Search.svg" alt="search icon">
+          <img src="./assets/icons/Search.svg" alt="search icon">
           <input type="text" placeholder="Buscar alumni..." class="search-input-desktop">
         </div>
         

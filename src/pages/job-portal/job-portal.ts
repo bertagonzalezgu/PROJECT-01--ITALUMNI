@@ -21,7 +21,7 @@ export function pagesJobsDesktop(): string{
           <h1 class="cards-grid__title">Ofertes de feina</h1>
 
         <div class="search-desktop-jobs">
-          <img src="src/assets/icons/Search.svg" alt="search icon">
+          <img src="./assets/icons/Search.svg" alt="search icon">
           <input type="text" placeholder="Buscar alumni..." class="search-input-desktop-jobs">
         </div>
 

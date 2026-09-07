@@ -14,28 +14,28 @@ export function signUp(): string {
 
       <label>
         <div class="field">
-          <img src="src/assets/icons/sign-up/User.svg" alt="user icon">
+          <img src="./assets/icons/sign-up/User.svg" alt="user icon">
           <input type="text" placeholder="Posa el teu nom"/>
         </div>
       </label>
 
       <label>
         <div class="field">
-          <img src="src/assets/icons/sign-up/User.svg" alt="user icon">
+          <img src="./assets/icons/sign-up/User.svg" alt="user icon">
           <input type="text" placeholder="Posa el teu cognom"/>
         </div>
       </label>
 
       <label>
         <div class="field">
-          <img src="src/assets/icons/sign-up/Mail.svg" alt="postcard icon">
+          <img src="./assets/icons/sign-up/Mail.svg" alt="postcard icon">
           <input type="email" placeholder="El teu correu electrònic"/>
         </div>
       </label>
 
       <label>
         <div class="field">
-          <img src="src/assets/icons/sign-up/Frame.svg" alt="padlock icon">
+          <img src="./assets/icons/sign-up/Frame.svg" alt="padlock icon">
           <input type="password" placeholder="Crea una contrasenya"/>
         </div>
       </label>
@@ -56,17 +56,17 @@ export function signUp(): string {
     </div>
 
       <button class="btn-social btn-apple">
-        <img src="src/assets/icons/sign-up/Apple.svg" alt="apple icon">
+        <img src="./assets/icons/sign-up/Apple.svg" alt="apple icon">
         Continua amb Apple
       </button>
  
     <button class="btn-social btn-google">
-      <img src="src/assets/icons/sign-up/Google.svg" alt="google icon">
+      <img src="./assets/icons/sign-up/Google.svg" alt="google icon">
       Continua amb Google
     </button>
  
     <button class="btn-social btn-fb">
-      <img src="src/assets/icons/sign-up/Logo facebook.svg" alt="facebook icon">
+      <img src="./assets/icons/sign-up/Logo facebook.svg" alt="facebook icon">
       Continua amb Facebook
     </button>  
  

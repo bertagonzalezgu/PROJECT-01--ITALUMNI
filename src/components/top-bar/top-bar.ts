@@ -22,28 +22,28 @@ export function topBarMobile(props: TopBarPropsMobile): string{
     ">
 
         <div class="topbar__row">
-          <button class="topbar__back topbar--has-back" onclick="goBack()" aria-label="atrás"><img src="src/assets/icons/top-bar/row/arrow-left.svg" alt="arrow left icon"></button>
+          <button class="topbar__back topbar--has-back" onclick="goBack()" aria-label="atrás"><img src="./assets/icons/top-bar/row/arrow-left.svg" alt="arrow left icon"></button>
     
           <h1 class="topbar__title">${props.title}</h1>
     
           <div class="topbar__actions">
-            <div class="topbar__icon topbar__icon--filter"><img src="src/assets/icons/top-bar/row/filtres.svg" alt="filter icon"></div>
-            <div class="topbar__icon topbar__icon--avatar"><img src="src/assets/icons/top-bar/row/Avatar.jpg" alt="user profile image"></div>
+            <div class="topbar__icon topbar__icon--filter"><img src="./assets/icons/top-bar/row/filtres.svg" alt="filter icon"></div>
+            <div class="topbar__icon topbar__icon--avatar"><img src="./assets/icons/top-bar/row/Avatar.jpg" alt="user profile image"></div>
           </div>
         </div>
 
         <div class="topbar__search topbar--has-search">
-          <span class="topbar__search-icon"><img src="src/assets/icons/top-bar/search-bar/Search.svg" alt="search icon"></span>
+          <span class="topbar__search-icon"><img src="./assets/icons/top-bar/search-bar/Search.svg" alt="search icon"></span>
           <input type="text" placeholder="Search alumni..." aria-label="Buscar alumni" />
         </div>
 
         <div class="topbar__filters topbar--has-filters">
           <button class="topbar__filter-btn">
-            <img src="src/assets/icons/top-bar/job-portal_filters/filter.svg" alt="filter icon">
+            <img src="./assets/icons/top-bar/job-portal_filters/filter.svg" alt="filter icon">
             <span>Industry \/</span>
           </button>
           <button class="topbar__filter-btn">
-            <img src="src/assets/icons/top-bar/job-portal_filters/filter.svg" alt="">
+            <img src="./assets/icons/top-bar/job-portal_filters/filter.svg" alt="">
             <span>Experience Level \/</span>
           </button>
         </div>
