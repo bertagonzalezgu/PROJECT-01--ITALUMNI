@@ -9,7 +9,7 @@ export function navBar(props: NavBarPropsDesktop): string{
     return /* html*/ `
     <nav class="nav">
         <div class="nav__box">
-          <img class="nav__box-img" src="../../../public/assets/img/Header.svg" alt="Logo Alumni">
+          <img class="nav__box-img" src="./assets/img/Header.svg" alt="Logo Alumni">
         
         <div class="nav__pages">
               <ul>
