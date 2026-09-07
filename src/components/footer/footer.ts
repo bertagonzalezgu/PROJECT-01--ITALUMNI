@@ -8,7 +8,7 @@ export function footer(): string {
           <h3>"No et perdis res, subscriu-te!"</h3>       
         <form class="footer__form">
           <div class="footer__input-box">
-            <img src="/src/assets/icons/Mail.svg" alt="postal card icon" class="footer__input-icon">
+            <img src="/public/assets/icons/Mail.svg" alt="postal card icon" class="footer__input-icon">
             <input type="email" class="footer__input" placeholder="El teu email" required>
             <button type="submit" class="footer__btn-submit">Subscriu-te</button>
           </div>
@@ -16,7 +16,7 @@ export function footer(): string {
       </div>
 
       <div class="footer__nav-box">
-        <img class="footer__logo" src="src/assets/img/Logo_invert.svg" alt="Logo Alumni negative">
+        <img class="footer__logo" src="/public/assets/img/Logo_invert.svg" alt="Logo Alumni negative">
         <div class="footer__links">
           <ul>
             <li>Sobre nosaltres</li>
@@ -45,9 +45,9 @@ export function footer(): string {
         </div>
 
         <div class="footer__social-icons">
-          <img src="src/assets/icons/LogoFacebook.svg" alt="Facebook icon">
-          <img src="src/assets/icons/LogoLinkedin.svg" alt="Linkedin icon">
-          <img src="src/assets/icons/LogoYoutube.svg" alt="Youtube icon">
+          <img src="/public/assets/icons/LogoFacebook.svg" alt="Facebook icon">
+          <img src="/public/assets/icons/LogoLinkedin.svg" alt="Linkedin icon">
+          <img src="/public/assets/icons/LogoYoutube.svg" alt="Youtube icon">
         </div>
       </div>
 
