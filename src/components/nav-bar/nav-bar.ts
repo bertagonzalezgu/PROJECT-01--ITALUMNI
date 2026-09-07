@@ -1,15 +1,18 @@
 import './nav-bar.css';
 
-interface NavBarPropsDesktop{
-    activePage: 'home' | 'networking' | 'jobs';
+import headerLogo from './assets/img/Header.svg';
+import cardIcon from './assets/icons/card.png';
+import userIcon from './assets/icons/user.png';
+
+interface NavBarPropsDesktop {
+  activePage: 'home' | 'networking' | 'jobs';
 }
 
-export function navBar(props: NavBarPropsDesktop): string{
-
-    return /* html*/ `
+export function navBar(props: NavBarPropsDesktop): string {
+  return /* html */ `
     <nav class="nav">
         <div class="nav__box">
-          <img class="nav__box-img" src="./assets/img/Header.svg" alt="Logo Alumni">
+          <img class="nav__box-img" src="${headerLogo}" alt="Logo Alumni">
         
         <div class="nav__pages">
               <ul>
@@ -26,8 +29,8 @@ export function navBar(props: NavBarPropsDesktop): string{
             </div>
         </div>
         <div class="nav__buttons">
-          <button class="btn-nav btn--white" data-action="sign-up"><img src="./assets/icons/card.png" alt="Icono carta">Apunta't</button>
-          <button class="btn-nav btn--color"><img src="./assets/icons/user.png" alt="Icono usuario">Com et veuen?</button>
+          <button class="btn-nav btn--white" data-action="sign-up"><img src="${cardIcon}" alt="Icono carta">Apunta't</button>
+          <button class="btn-nav btn--color"><img src="${userIcon}" alt="Icono usuario">Com et veuen?</button>
         </div>
         
     </nav>
