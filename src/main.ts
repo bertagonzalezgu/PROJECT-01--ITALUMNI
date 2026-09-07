@@ -91,7 +91,6 @@ function navTo(section: string){
 
   currentPage = section
 
-  
   const isMobile = window.innerWidth < 768;
 
   let checkPageId = section;
@@ -426,6 +425,4 @@ document.addEventListener('click', (e) => {
     }
   }
 });
-
-// Filtres de cerca per jobs:
 

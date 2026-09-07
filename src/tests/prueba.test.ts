@@ -36,7 +36,6 @@ describe('Diagnóstico del renderitzat', () => {
     expect(typeof pagesJobsMobile()).toBe('string');
     expect(typeof pagesJobsDesktop()).toBe('string');
   });
-
 });
 
 describe('Èpica 3 - Xarxa entre exalumnes', () => {
